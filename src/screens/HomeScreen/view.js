@@ -1,4 +1,3 @@
-const HomeScreen = () => 
-  <div>HomeScreen</div>
+const HomeScreen = () => <div>HomeScreen</div>;
 
 export default HomeScreen;

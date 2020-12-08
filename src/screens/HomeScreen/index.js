@@ -5,7 +5,7 @@ import HomeScreen from './view';
 // });
 
 // const mapDispatchToProps = () => ({
-  
+
 // });
 
 // export default connect(mapStateToProps,mapDispatchToProps)(HomeScreen);

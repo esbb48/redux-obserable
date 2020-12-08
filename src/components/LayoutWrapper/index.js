@@ -1,7 +1,8 @@
-const LayoutWrapper = ({ children }) => 
+const LayoutWrapper = ({ children }) => (
   <div>
     <div>Header</div>
-    <div>{ children }</div>
+    <div>{children}</div>
   </div>
+);
 
 export default LayoutWrapper;

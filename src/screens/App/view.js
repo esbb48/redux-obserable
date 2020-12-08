@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomeScreen from '~/screens/HomeScreen';
 import LayoutWrapper from '~/components/LayoutWrapper';
 
@@ -7,7 +7,7 @@ function App() {
     <Router>
       <LayoutWrapper>
         <Switch>
-          <Route path="*">
+          <Route path='*'>
             <HomeScreen />
           </Route>
         </Switch>
