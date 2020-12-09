@@ -1,10 +1,10 @@
-import { combineReducers } from 'redux';
 import { combineEpics } from 'redux-observable';
 import { catchError } from 'rxjs/operators';
-import auth, { fetchUserEpic } from './auth';
-const epics = [fetchUserEpic];
+import { fetchUsersEpic } from './authEpics';
 
-export const rootEpic = (action$, store$, dependencies) =>
+const epics = [fetchUsersEpic];
+
+const rootEpic = (action$, store$, dependencies) =>
   combineEpics(...epics)(action$, store$, dependencies).pipe(
     catchError((error, source) => {
       console.error(error);
@@ -12,6 +12,4 @@ export const rootEpic = (action$, store$, dependencies) =>
     })
   );
 
-export const rootReducer = combineReducers({
-  auth,
-});
+export default rootEpic;

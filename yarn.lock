@@ -5072,6 +5072,11 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
+flux-constants@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/flux-constants/-/flux-constants-0.2.2.tgz#c376ffe3c40195d4924249e71e66e7851f8764a3"
+  integrity sha1-w3b/48QBldSSQknnHmbnhR+HZKM=
+
 follow-redirects@^1.0.0:
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.0.tgz#b42e8d93a2a7eea5ed88633676d6597bc8e384db"
