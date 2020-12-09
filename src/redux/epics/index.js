@@ -1,8 +1,12 @@
 import { combineEpics } from 'redux-observable';
 import { catchError } from 'rxjs/operators';
-import { fetchUsersEpic } from './authEpics';
+import * as authEpics from './authEpics';
 
-const epics = [fetchUsersEpic];
+const epicCollection = [authEpics];
+const epics = epicCollection.reduce(
+  (result, epicCollect) => [...result, ...Object.values(epicCollect)],
+  []
+);
 
 const rootEpic = (action$, store$, dependencies) =>
   combineEpics(...epics)(action$, store$, dependencies).pipe(
