@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getList } from '~/redux/actions/authActions';
+import { createAction } from '~/redux/actionUtils';
 import HomeScreen from './view';
 
 const mapStateToProps = ({ auth }) => ({
@@ -9,7 +9,10 @@ const mapStateToProps = ({ auth }) => ({
 
 const mapDispatchToProps = dispatch => ({
   handleGetList: () => {
-    dispatch(getList());
+    dispatch(createAction('GET_LIST')());
+  },
+  handleLogin: payload => {
+    dispatch(createAction('LOGIN')(payload));
   },
 });
 

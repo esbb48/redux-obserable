@@ -1,4 +1,5 @@
 export const authState = {
-  isAuth: true,
+  isAuth: false,
+  account: '',
   users: [],
 };

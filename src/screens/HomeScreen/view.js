@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const HomeScreen = ({ handleGetList, users }) => {
+const HomeScreen = ({ handleGetList, handleLogin, users }) => {
   useEffect(() => {
     handleGetList();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -26,7 +26,9 @@ const HomeScreen = ({ handleGetList, users }) => {
                 <img alt='avatar_url' width='100' src={avatar_url} />
               </td>
               <td>
-                <button>登入</button>
+                <button onClick={() => handleLogin({ account: login })}>
+                  登入
+                </button>
               </td>
             </tr>
           ))}
