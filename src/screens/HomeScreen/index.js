@@ -1,13 +1,16 @@
-// import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import { getList } from '~/redux/actions/authActions';
 import HomeScreen from './view';
 
-// const mapStateToProps = () => ({
-// });
+const mapStateToProps = ({ auth }) => ({
+  isAuth: auth.isAuth,
+  users: auth.users,
+});
 
-// const mapDispatchToProps = () => ({
+const mapDispatchToProps = dispatch => ({
+  handleGetList: () => {
+    dispatch(getList());
+  },
+});
 
-// });
-
-// export default connect(mapStateToProps,mapDispatchToProps)(HomeScreen);
-
-export default HomeScreen;
+export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);

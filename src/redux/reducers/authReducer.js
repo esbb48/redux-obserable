@@ -2,12 +2,13 @@ import produce from 'immer';
 import types from '../actionTypes';
 import { authState } from './initialState';
 
-const authReducer = produce((state, action) => {
-  switch (action.type) {
+const authReducer = produce((state, { type, payload }) => {
+  switch (type) {
     case types.GET_LIST_SUCCESS:
-      return { ...authState, users: [{ id: 1, name: 'Alice' }] };
+      state.users = payload.items;
+      break;
     default:
-      return state;
+      break;
   }
 }, authState);
 
