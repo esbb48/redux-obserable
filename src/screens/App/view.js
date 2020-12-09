@@ -1,24 +1,22 @@
-import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomeScreen from '~/screens/HomeScreen';
 import LayoutWrapper from '~/components/LayoutWrapper';
-import reduxStore from '~/redux/configureStore';
 
-const store = reduxStore();
-function App() {
+const App = ({ isAuth, account, handleLogout }) => {
   return (
-    <Provider store={store}>
-      <Router>
-        <LayoutWrapper>
-          <Switch>
-            <Route path='*'>
-              <HomeScreen />
-            </Route>
-          </Switch>
-        </LayoutWrapper>
-      </Router>
-    </Provider>
+    <Router>
+      <LayoutWrapper
+        isAuth={isAuth}
+        account={account}
+        handleLogout={handleLogout}>
+        <Switch>
+          <Route path='*'>
+            <HomeScreen />
+          </Route>
+        </Switch>
+      </LayoutWrapper>
+    </Router>
   );
-}
+};
 
 export default App;
